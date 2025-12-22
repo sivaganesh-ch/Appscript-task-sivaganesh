@@ -1,0 +1,155 @@
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.header p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.leftControls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.count {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.filterToggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary);
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.sortContainer {
+    position: relative;
+}
+
+.sortBtn {
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.sortMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    z-index: 20;
+    padding: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sortMenu li {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.sortMenu li:hover {
+    background: var(--gray-light);
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.gridWithFilter {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.gridFull {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.desktopOnly {
+    display: none;
+}
+
+.mobileOnly {
+    display: flex;
+}
+
+/* Response Breakpoints */
+@media (max-width: 768px) {
+
+    .gridWithFilter,
+    .gridFull {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .count {
+        display: none;
+        /* Often hidden on mobile to save space, or kept. Design has it? Mobile image doesn't show count clearly but let's hide it to match cleaner mobile look or keep if room. */
+    }
+
+    .wrapper {
+        padding: 1rem .5rem;
+    }
+
+    .controls {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktopOnly {
+        display: flex;
+    }
+
+    .mobileOnly {
+        display: none;
+    }
+}

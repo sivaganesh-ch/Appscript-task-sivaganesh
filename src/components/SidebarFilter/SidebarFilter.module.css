@@ -1,0 +1,77 @@
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding-right: 2rem;
+}
+
+.filterSection {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.filterGroup {
+    border-bottom: 1px solid var(--border);
+}
+
+.groupHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.title {
+    font-family: var(--font-main);
+    color: var(--foreground);
+}
+
+.groupContent {
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.allText {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.unselect {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkboxLabel input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.labelText {
+    opacity: 0.9;
+}

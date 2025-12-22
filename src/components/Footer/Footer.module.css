@@ -1,0 +1,230 @@
+.footer {
+    background-color: var(--primary);
+    color: var(--background);
+    padding: 3rem 1.5rem 1rem 1.5rem;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.col h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.col p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.newsletter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter input {
+    padding: 0.8rem;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #000;
+    flex: 1;
+    min-width: 0;
+}
+
+.newsletter button {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.currency {
+    margin-top: 2rem;
+}
+
+.flag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.star {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.small {
+    font-size: 0.75rem !important;
+    opacity: 0.7;
+}
+
+.divider {
+    height: 1px;
+    background-color: #fff;
+    max-width: 1440px;
+    margin: 0 auto 2rem auto;
+}
+
+.linksSection {
+    display: flex;
+    flex-direction: column;
+    /* Mobile first stack */
+    gap: 0;
+    /* Gaps handled by accordions */
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.linkGroup {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordionWrapper {
+    width: 100%;
+}
+
+.accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+}
+
+.staticHeader {
+    padding: 0 0 1.5rem 0;
+}
+
+.staticHeader h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.accordionHeader h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.accordionContent {
+    padding-bottom: 1.5rem;
+}
+
+.accordionContent ul li {
+    margin-bottom: 0.8rem;
+}
+
+.accordionContent ul li a {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.accordionContent ul li a:hover {
+    opacity: 1;
+}
+
+.paymentContainer {
+    margin-top: 2rem;
+}
+
+.paymentContainer h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.payments {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.payments img {
+    height: 30px;
+    background: #fff;
+    padding: 2px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.placeholderIcon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+    .topSection {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .newsletter input {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid #fff;
+        color: #fff;
+    }
+
+    .newsletter button {
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .linksSection {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .linkGroup {
+        border-bottom: none;
+        flex: 1;
+    }
+
+    .accordionHeader {
+        cursor: default;
+        padding: 0 0 1.5rem 0;
+    }
+
+    .staticHeader {
+        padding: 0 0 1.5rem 0;
+    }
+
+    /* Hide chevrons on desktop if they render */
+    .accordionHeader svg {
+        display: none;
+    }
+
+    .col {
+        width: 45%;
+    }
+}
