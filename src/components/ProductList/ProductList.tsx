@@ -1,22 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import SidebarFilter from '../SidebarFilter/SidebarFilter';
 import styles from './ProductList.module.css';
-import { Product } from '@/lib/api';
+import { Product, getProducts } from '@/lib/api';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { useFilter } from '@/context/FilterContext';
 
 export default function ProductList({ products: initialProducts }: { products: Product[] }) {
+    const [products, setProducts] = useState<Product[]>(initialProducts);
+    const [isLoading, setIsLoading] = useState(false);
     const [showFilter, setShowFilter] = useState(true);
     const [sortOpen, setSortOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('RECOMMENDED');
 
     const { searchQuery, selectedFilters } = useFilter();
 
+    useEffect(() => {
+        if (products.length === 0) {
+            const fetchProducts = async () => {
+                setIsLoading(true);
+                try {
+                    const data = await getProducts();
+                    setProducts(data);
+                } catch (error) {
+                    console.error("Failed to load products on client", error);
+                } finally {
+                    setIsLoading(false);
+                }
+            };
+            fetchProducts();
+        }
+    }, [products.length]);
+
     // Filter Logic
-    const filteredProducts = initialProducts.filter(p => {
+    const filteredProducts = products.filter(p => {
         // Search Filter
         const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -109,7 +128,9 @@ export default function ProductList({ products: initialProducts }: { products: P
                     {sortedProducts.length > 0 ? (
                         sortedProducts.map(p => <ProductCard key={p.id} product={p} />)
                     ) : (
-                        <div className={styles.noResults}>No products found matching your filters.</div>
+                        <div className={styles.noResults}>
+                            {isLoading ? 'Loading products...' : 'No products found matching your filters.'}
+                        </div>
                     )}
                 </div>
             </div>
