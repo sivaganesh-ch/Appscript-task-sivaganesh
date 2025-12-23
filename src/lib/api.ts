@@ -12,7 +12,7 @@ export interface Product {
 }
 
 export async function getProducts(): Promise<Product[]> {
-    const res = await fetch('https://fakestoreapi.com/products', { cache: 'no-store' }); // Ensure fresh data or use 'force-cache' for SSG
+    const res = await fetch('https://fakestoreapi.com/products');
     if (!res.ok) {
         throw new Error('Failed to fetch products');
     }
